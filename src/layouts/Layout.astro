@@ -1,23 +1,166 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Kaustav Deka — Portfolio',
+  description = 'Engineer building at the intersection of machine learning, web, and data — from open-source research tools to production dashboards.',
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://deka27.github.io/portfolio/" />
+    <link rel="canonical" href="https://deka27.github.io/portfolio/" />
+    <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <script is:inline>
+      (function () {
+        try {
+          const saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') {
+            document.documentElement.setAttribute('data-theme', saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root,
+  :root[data-theme='light'] {
+    --bg: #ffffff;
+    --bg-secondary: #f9fafb;
+    --text: #171717;
+    --text-secondary: #525252;
+    --text-tertiary: #a3a3a3;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --accent-light: rgba(79, 70, 229, 0.08);
+    --border: #e5e7eb;
+    --tag-bg: #f3f4f6;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --max-width: 1100px;
+    --max-width-text: 720px;
+    --header-height: 60px;
+    --glow-1: rgba(79, 70, 229, 0.15);
+    --glow-2: rgba(124, 58, 237, 0.12);
+    --glow-3: rgba(37, 99, 235, 0.1);
+    --card-glow: 0 8px 30px -5px rgba(79, 70, 229, 0.08);
+    --card-border-hover: rgba(79, 70, 229, 0.35);
+    --btn-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  }
+
+  :root[data-theme='dark'] {
+    --bg: #0a0a0a;
+    --bg-secondary: #111111;
+    --text: #ededed;
+    --text-secondary: #a3a3a3;
+    --text-tertiary: #737373;
+    --accent: #818cf8;
+    --accent-hover: #a5b4fc;
+    --accent-light: rgba(129, 140, 248, 0.08);
+    --border: #1f1f1f;
+    --tag-bg: #171717;
+    --nav-bg: rgba(10, 10, 10, 0.8);
+    --glow-1: rgba(129, 140, 248, 0.1);
+    --glow-2: rgba(167, 139, 250, 0.08);
+    --glow-3: rgba(96, 165, 250, 0.06);
+    --card-glow: 0 8px 30px -5px rgba(129, 140, 248, 0.06);
+    --card-border-hover: rgba(129, 140, 248, 0.35);
+    --btn-shadow: 0 4px 14px rgba(129, 140, 248, 0.2);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      --bg: #0a0a0a;
+      --bg-secondary: #111111;
+      --text: #ededed;
+      --text-secondary: #a3a3a3;
+      --text-tertiary: #737373;
+      --accent: #818cf8;
+      --accent-hover: #a5b4fc;
+      --accent-light: rgba(129, 140, 248, 0.08);
+      --border: #1f1f1f;
+      --tag-bg: #171717;
+      --nav-bg: rgba(10, 10, 10, 0.8);
+      --glow-1: rgba(129, 140, 248, 0.1);
+      --glow-2: rgba(167, 139, 250, 0.08);
+      --glow-3: rgba(96, 165, 250, 0.06);
+      --card-glow: 0 8px 30px -5px rgba(129, 140, 248, 0.06);
+      --card-border-hover: rgba(129, 140, 248, 0.35);
+      --btn-shadow: 0 4px 14px rgba(129, 140, 248, 0.2);
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--accent-hover);
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: white;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>

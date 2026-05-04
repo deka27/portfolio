@@ -1,11 +1,1196 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Image } from 'astro:assets';
+import heroImg from '../assets/hero.png';
 ---
 
 <Layout>
-	<Welcome />
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">KD</a>
+        <div class="nav-center">
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#publications" class="nav-link">Publications</a>
+        </div>
+        <div class="nav-social">
+          <button class="theme-toggle" aria-label="Toggle theme" type="button">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <a href="https://github.com/deka27" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/dekak" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:mailerdeka@gmail.com" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="status-badge">
+          <span class="pulse"></span>
+          Open to opportunities
+        </div>
+        <h1>Kaustav Deka</h1>
+        <p class="tagline">
+          I build software at the intersection of machine learning, web, and data —
+          from open-source research tools to production dashboards.
+        </p>
+        <div class="hero-meta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Bloomington, Indiana</span>
+        </div>
+        <div class="hero-actions">
+          <a href="mailto:mailerdeka@gmail.com" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Get in Touch
+          </a>
+          <a href="https://github.com/deka27" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/dekak" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <Image
+          src={heroImg}
+          alt=""
+          loading="eager"
+          widths={[400, 600, 800, 1000, 1400]}
+          sizes="(max-width: 640px) 320px, (max-width: 900px) 480px, 800px"
+        />
+      </div>
+    </div>
+    <a href="#experience" class="scroll-indicator" aria-label="Scroll down">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <div class="content">
+    <section id="experience" class="reveal">
+      <h2 class="section-heading">Experience</h2>
+      <div class="section-content">
+      <article>
+        <div class="item-header">
+          <h3>Research Assistant</h3>
+          <span class="date">Jan 2025 – Present</span>
+        </div>
+        <p class="org">Garyfallidis Research Group, Indiana University · Bloomington, IN</p>
+        <ul>
+          <li>Accelerated EuDX tractography by 12×, reducing runtime from hours to minutes via OpenMP parallelization and Cython optimization for large diffusion MRI datasets</li>
+          <li>Built an end-to-end diffusion MRI pipeline using 15+ DIPY methods and a Bash CLI, automating 20+ steps previously executed manually</li>
+          <li>Delivered a PyQt GUI that reduced DIPY setup complexity by 60%, enabling non-technical users to run advanced tractography workflows</li>
+          <li>Developing the GLIDE uncertainty-adaptive tractography algorithm within DIPY's Cython propagator architecture; evaluated on HCP data with RecoBundles across 80 bundles</li>
+          <li>Contributed to the FORCE microstructure estimation pipeline (under review at <em>Nature Methods</em>), designing stability experiments including library resampling and input perturbation</li>
+          <li>Created publication-quality scientific figures: Nature-style SVG pipeline diagrams, multi-panel matplotlib comparison figures, and Blender-rendered white matter visualizations</li>
+        </ul>
+      </article>
+
+      <article>
+        <div class="item-header">
+          <h3>Google Summer of Code Contributor</h3>
+          <span class="date">Jan 2024 – Sep 2024</span>
+        </div>
+        <p class="org">DIPY Neuroimaging Library · Remote</p>
+        <ul>
+          <li>Shipped 50+ open-source contributions to a Python library with 10,000+ users, including performance improvements cutting memory use by 30%</li>
+          <li>Implemented lazy loading to decrease import time by 45% and reduce initial memory footprint from 250 MB to 140 MB</li>
+          <li>Improved documentation usability by refactoring a website serving 5,000+ monthly visitors, reducing developer onboarding time by 25%</li>
+        </ul>
+      </article>
+
+      <article>
+        <div class="item-header">
+          <h3>Senior Program Engineer</h3>
+          <span class="date">Jan 2022 – Feb 2023</span>
+        </div>
+        <p class="org">RGBSI · Bengaluru, India</p>
+        <ul>
+          <li>Improved product adoption by 20% by building Power BI analytics dashboards to guide data-driven feature prioritization for a SaaS platform</li>
+          <li>Delivered 4 enterprise software implementations for 200+ end users on schedule, achieving 95%+ stakeholder satisfaction</li>
+        </ul>
+      </article>
+
+      <article>
+        <div class="item-header">
+          <h3>Implementation Engineer</h3>
+          <span class="date">Mar 2020 – Jan 2022</span>
+        </div>
+        <p class="org">RGBSI · Bengaluru, India</p>
+        <ul>
+          <li>Built 25+ Power BI and Business Objects dashboards analyzing historical trends, driving 3 major system enhancements and 15% efficiency gains</li>
+          <li>Reduced production support tickets by 35% through proactive analysis and system gap identification</li>
+        </ul>
+      </article>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2 class="section-heading">Projects</h2>
+      <div class="projects-grid">
+      <article>
+        <div class="project-title-row">
+          <h3>HRA &amp; CNS Analytics Dashboard</h3>
+          <div class="project-links">
+            <a href="https://hra-viz.vercel.app" target="_blank" rel="noopener noreferrer" class="ext-link">
+              Live
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="https://github.com/deka27/hra-viz" target="_blank" rel="noopener noreferrer" class="ext-link">
+              GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>ECharts</span><span>DuckDB</span><span>Python</span><span>Prophet</span>
+        </div>
+        <ul>
+          <li>Built a multi-dashboard analytics platform processing 31M+ AWS CloudFront records across two Indiana University projects — Human Reference Atlas and the Cyberinfrastructure for Network Science</li>
+          <li>13 dashboard pages with 70+ chart components, Prophet forecasting, churn prediction, and bot detection over 18 years of historical traffic</li>
+        </ul>
+      </article>
+
+      <article>
+        <div class="project-title-row">
+          <h3>DIPY Workshop LMS</h3>
+          <div class="project-links">
+            <a href="https://workshop.dipy.org/lms" target="_blank" rel="noopener noreferrer" class="ext-link">
+              Live
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="https://github.com/dipy/dipy_lms" target="_blank" rel="noopener noreferrer" class="ext-link">
+              GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="tags">
+          <span>FastAPI</span><span>HTMX</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>Supabase</span><span>Jinja2</span>
+        </div>
+        <ul>
+          <li>Built a Python LMS for the 2026 DIPY workshop — magic-link auth, role-based access (staff and watcher tiers), talks with resources, live chat, forum, and CSV bulk user imports</li>
+          <li>Deployed to Indiana University infrastructure with systemd and supervisor; serves participant onboarding, session content, and progress tracking</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Cross-Modality Brain MRI Synthesis (T1↔T2)</h3>
+        <div class="tags">
+          <span>PyTorch</span><span>NumPy</span><span>SciPy</span><span>Matplotlib</span>
+        </div>
+        <ul>
+          <li>Benchmarked five architectures (U-Net, Attention U-Net, Pix2Pix, cVAE) for bidirectional T1↔T2 synthesis on 577 subjects from the IXI dataset</li>
+          <li>Achieved 32.35 dB PSNR and FID of 13.6, with a 13-experiment robustness suite probing lesion sensitivity, noise tolerance, and clinical safety</li>
+        </ul>
+      </article>
+
+      <article>
+        <div class="project-title-row">
+          <h3>Garyfallidis Research Group Website</h3>
+          <div class="project-links">
+            <a href="https://grg.luddy.indiana.edu" target="_blank" rel="noopener noreferrer" class="ext-link">
+              Live
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="https://github.com/deka27/grg-web" target="_blank" rel="noopener noreferrer" class="ext-link">
+              GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Sphinx</span><span>PyData Theme</span><span>Python</span>
+        </div>
+        <ul>
+          <li>Designed and built the public website for the Garyfallidis Research Group at Indiana University — research, team, publications, and blog</li>
+        </ul>
+      </article>
+
+      <article>
+        <div class="project-title-row">
+          <h3>SLAM with Extended Kalman Filter</h3>
+          <div class="project-links">
+            <a href="https://github.com/deka27/slam" target="_blank" rel="noopener noreferrer" class="ext-link">
+              GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="tags">
+          <span>NumPy</span><span>SciPy</span><span>Pandas</span><span>FURY</span><span>Matplotlib</span>
+        </div>
+        <ul>
+          <li>Implemented SLAM with EKF achieving real-time state estimation at 30 Hz update rate</li>
+          <li>Developed sensor fusion models handling uncertainty propagation with &lt;5 cm localization error</li>
+        </ul>
+      </article>
+      </div>
+    </section>
+
+    <section id="publications" class="reveal">
+      <h2 class="section-heading">Publications</h2>
+      <div class="section-content">
+      <article>
+        <h3>FORCE: FORward modeling for Complex microstructure Estimation</h3>
+        <p class="pub-meta">Co-author · Under review at <em>Nature Methods</em></p>
+        <p class="pub-desc">Novel forward modeling approach for estimating brain tissue microstructure from diffusion MRI data. Contributed stability experiments, figure design, and pipeline validation.</p>
+      </article>
+
+      <article>
+        <h3>Cross-Modality Brain MRI Synthesis: A Comparative Study</h3>
+        <p class="pub-meta">Co-first author · Indiana University Bloomington</p>
+        <p class="pub-desc">Comparative study of five deep learning architectures for bidirectional T1↔T2 brain MRI synthesis with multi-metric evaluation and robustness analysis.</p>
+      </article>
+      </div>
+    </section>
+
+    <section id="education" class="reveal">
+      <h2 class="section-heading">Education</h2>
+      <div class="section-content">
+      <article>
+        <div class="item-header">
+          <h3>MS in Intelligent Systems Engineering</h3>
+          <span class="date">Jan 2025 – Present</span>
+        </div>
+        <p class="org">Indiana University, Bloomington — GPA: 3.85 / 4.00</p>
+        <p class="courses">Machine Learning · Deep Learning · Computer Vision · Optimization · Information Visualization</p>
+      </article>
+
+      <article>
+        <div class="item-header">
+          <h3>BE in Industrial Engineering &amp; Management</h3>
+          <span class="date">Aug 2015 – Jul 2019</span>
+        </div>
+        <p class="org">Bangalore Institute of Technology, Bangalore, India</p>
+      </article>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h2 class="section-heading">Skills</h2>
+      <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Core</h4>
+        <div class="tags">
+          <span>Python</span><span>PyTorch</span><span>scikit-learn</span><span>NumPy</span><span>SciPy</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Deep Learning</h4>
+        <div class="tags">
+          <span>U-Net</span><span>Attention U-Net</span><span>Pix2Pix (cGAN)</span><span>cVAE</span><span>Mixed-Precision Training</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Scientific Computing</h4>
+        <div class="tags">
+          <span>Diffusion MRI</span><span>Tractography</span><span>DIPY</span><span>NIfTI</span><span>OpenMP</span><span>Cython</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Data</h4>
+        <div class="tags">
+          <span>SQL</span><span>Pandas</span><span>DuckDB</span><span>Power BI</span><span>Business Objects</span><span>Matplotlib</span><span>Seaborn</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Web</h4>
+        <div class="tags">
+          <span>React</span><span>Next.js</span><span>Vite</span><span>Astro</span><span>FastAPI</span><span>ECharts</span><span>D3</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Product</h4>
+        <div class="tags">
+          <span>Azure DevOps</span><span>Feature Prioritization</span><span>Stakeholder Management</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Tools</h4>
+        <div class="tags">
+          <span>Git</span><span>Docker</span><span>CI/CD</span><span>Bash</span><span>PyQt</span><span>Blender</span>
+        </div>
+      </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-cta reveal">
+      <h2>Let's Connect</h2>
+      <p>Open to roles across machine learning, web, and product — happy to chat about what you're building.</p>
+      <a href="mailto:mailerdeka@gmail.com" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Get in Touch
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-social">
+        <a href="https://github.com/deka27" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/dekak" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:mailerdeka@gmail.com" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+      <p>&copy; 2026 Kaustav Deka</p>
+    </div>
+  </footer>
 </Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  const themeToggle = document.querySelector('.theme-toggle');
+  themeToggle?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const current =
+      root.getAttribute('data-theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try {
+      localStorage.setItem('theme', next);
+    } catch (e) {}
+  });
+</script>
+
+<style>
+  /* ── Navigation ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 60px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-weight: 800;
+    font-size: 1.125rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo:hover {
+    color: var(--accent);
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    position: relative;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--accent);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-social {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    justify-self: end;
+  }
+
+  .nav-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 0.5rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+
+  .nav-social a:hover {
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 0.5rem;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font: inherit;
+    padding: 0;
+  }
+
+  .theme-toggle:hover {
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .theme-toggle svg {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .theme-toggle:hover svg {
+    transform: rotate(15deg);
+  }
+
+  .icon-sun,
+  .icon-moon {
+    display: none;
+  }
+
+  :root[data-theme='light'] .icon-moon { display: block; }
+  :root[data-theme='dark'] .icon-sun { display: block; }
+  :root:not([data-theme]) .icon-moon { display: block; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .icon-moon { display: none; }
+    :root:not([data-theme]) .icon-sun { display: block; }
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    min-height: calc(100svh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+  }
+
+  .glow-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--glow-1);
+    top: -15%;
+    right: -10%;
+    animation: float1 15s ease-in-out infinite;
+  }
+
+  .glow-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--glow-2);
+    bottom: -10%;
+    left: -8%;
+    animation: float2 20s ease-in-out infinite;
+  }
+
+  .glow-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--glow-3);
+    top: 40%;
+    left: 55%;
+    animation: float3 18s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-30px, 25px) scale(1.05); }
+    66% { transform: translate(20px, -15px) scale(0.95); }
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(25px, -30px) scale(1.05); }
+    66% { transform: translate(-15px, 20px) scale(0.95); }
+  }
+
+  @keyframes float3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-20px, -20px) scale(1.08); }
+    66% { transform: translate(25px, 15px) scale(0.92); }
+  }
+
+  .hero-grid {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .hero-content {
+    position: relative;
+    width: 100%;
+  }
+
+  .hero-content > * {
+    opacity: 0;
+    animation: heroIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.35s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.45s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.55s; }
+
+  .hero-image {
+    position: relative;
+    opacity: 0;
+    animation: heroIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.25s ease;
+  }
+
+  :root[data-theme='dark'] .hero-image img {
+    filter: invert(0.92) hue-rotate(180deg);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .hero-image img {
+      filter: invert(0.92) hue-rotate(180deg);
+    }
+  }
+
+  @keyframes heroIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 1rem 0.375rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg);
+    margin-bottom: 1.5rem;
+  }
+
+  .pulse {
+    position: relative;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .pulse::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 540px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--text-tertiary);
+    font-size: 0.9375rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-meta svg {
+    flex-shrink: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--btn-shadow);
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--card-border-hover);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-tertiary);
+    animation: bounce 2.5s ease-in-out infinite;
+    opacity: 0;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes bounce {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  /* ── Content Sections ── */
+  .content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  section + section {
+    border-top: 1px solid var(--border);
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin: 0;
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+    align-self: start;
+  }
+
+  .section-heading::before {
+    content: '';
+    width: 1.5rem;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+
+  /* ── Section Content Wrappers ── */
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 2.5rem;
+    min-width: 0;
+  }
+
+  /* ── Cards / Articles ── */
+  article {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 0;
+  }
+
+  article:hover {
+    background: var(--bg-secondary);
+    border-color: var(--card-border-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--card-glow);
+  }
+
+  article:hover h3 {
+    color: var(--accent);
+  }
+
+  .projects-grid article {
+    border-color: var(--border);
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .project-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    transition: color 0.2s ease;
+  }
+
+  .date {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .org {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.125rem;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .ext-link svg {
+    transition: transform 0.2s ease;
+  }
+
+  .ext-link:hover svg {
+    transform: translate(2px, -2px);
+  }
+
+  /* ── Lists ── */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.75rem;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.375rem;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  /* ── Tags ── */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+  }
+
+  .tags span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.1875rem 0.625rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 9999px;
+    border: 1px solid var(--card-border-hover);
+    transition: all 0.2s ease;
+  }
+
+  /* ── Publications ── */
+  .pub-meta {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  .pub-desc {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+
+  /* ── Education ── */
+  .courses {
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    margin-top: 0.375rem;
+  }
+
+  /* ── Skills ── */
+  .skill-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-group:last-child {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── Footer ── */
+  footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .footer-cta {
+    position: relative;
+    text-align: center;
+    padding: 3.5rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    margin-bottom: 3rem;
+    overflow: hidden;
+  }
+
+  .footer-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .footer-cta h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-cta p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.625rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+  }
+
+  .footer-social a:hover {
+    color: var(--accent);
+    border-color: var(--card-border-hover);
+    background: var(--accent-light);
+    transform: translateY(-2px);
+  }
+
+  .footer-bottom p {
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    section {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      padding: 4rem 0;
+    }
+
+    .section-heading {
+      position: static;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero-image {
+      max-width: 420px;
+      margin: 0 auto;
+      order: -1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .nav-inner {
+      grid-template-columns: auto 1fr;
+    }
+
+    .nav-center {
+      display: none;
+    }
+
+    .nav-social {
+      justify-self: end;
+    }
+
+    .content {
+      padding: 0 1.5rem;
+    }
+
+    .hero {
+      min-height: calc(100svh - var(--header-height));
+    }
+
+    .hero-image {
+      max-width: 320px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1.0625rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .hero-actions .btn {
+      justify-content: center;
+    }
+
+    .item-header,
+    .project-title-row {
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    article {
+      padding: 1rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .glow-1 { width: 300px; height: 300px; }
+    .glow-2 { width: 250px; height: 250px; }
+    .glow-3 { width: 200px; height: 200px; }
+
+    .footer-cta {
+      padding: 2.5rem 1.5rem;
+    }
+  }
+</style>
