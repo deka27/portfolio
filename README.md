@@ -1,46 +1,52 @@
-# Astro Starter Kit: Basics
+# Portfolio
 
-```sh
-npm create astro@latest -- --template basics
+Personal portfolio site built with [Astro](https://astro.build) and deployed to GitHub Pages.
+
+**Live:** [deka27.github.io/portfolio](https://deka27.github.io/portfolio/)
+
+## Stack
+
+- Astro 6, vanilla CSS, Inter (Google Fonts)
+- Lucide icons (inline SVG)
+- Light/dark theme with manual toggle (light by default)
+- GitHub Actions for deploys
+
+Built with minimal dependencies — just Astro and a touch of vanilla JavaScript for theme switching and scroll animations.
+
+## Structure
+
+```
+.github/workflows/deploy.yml   build + deploy on push to main
+public/                        static assets (favicon)
+src/
+  assets/                      images processed by Astro (hero.png), CV source
+  layouts/Layout.astro         HTML shell, theme variables, global styles
+  pages/index.astro            single-page portfolio
+astro.config.mjs               site URL + base path
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Develop
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+npm install
+npm run dev      # http://localhost:4321/portfolio/
+npm run build    # production build to ./dist
+npm run preview  # serve the built site locally
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Deploy
 
-## 🧞 Commands
+Pushes to `main` auto-deploy via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
-All commands are run from the root of the project, from a terminal:
+One-time setup: `Settings → Pages → Source: GitHub Actions`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Forking
 
-## 👀 Want to learn more?
+Update [`astro.config.mjs`](astro.config.mjs) for your URL:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```js
+export default defineConfig({
+  site: 'https://<your-username>.github.io',
+  base: '/<your-repo-name>',  // or '/' for a user/org page
+});
+```

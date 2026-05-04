@@ -383,9 +383,7 @@ import heroImg from '../assets/hero.png';
   const themeToggle = document.querySelector('.theme-toggle');
   themeToggle?.addEventListener('click', () => {
     const root = document.documentElement;
-    const current =
-      root.getAttribute('data-theme') ||
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const current = root.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     try {
@@ -521,11 +519,6 @@ import heroImg from '../assets/hero.png';
   :root[data-theme='dark'] .icon-sun { display: block; }
   :root:not([data-theme]) .icon-moon { display: block; }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) .icon-moon { display: none; }
-    :root:not([data-theme]) .icon-sun { display: block; }
-  }
-
   /* ── Hero ── */
   .hero {
     position: relative;
@@ -636,12 +629,6 @@ import heroImg from '../assets/hero.png';
 
   :root[data-theme='dark'] .hero-image img {
     filter: invert(0.92) hue-rotate(180deg);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) .hero-image img {
-      filter: invert(0.92) hue-rotate(180deg);
-    }
   }
 
   @keyframes heroIn {
